@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Online Course Registration</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="card">
+
+  <h1 class="app-title">Online Course Registration</h1>
+
+  <div class="tab-buttons">
+    <button id="tabRegister" class="tab-btn active" onclick="showView('register')">Candidate Registration</button>
+    <button id="tabAdmin" class="tab-btn" onclick="showView('admin')">Admin Login</button>
+  </div>
+
+  <!-- ===================== CANDIDATE REGISTRATION ===================== -->
+  <section id="registerView" class="view">
+    <h2 class="view-title">Candidate Registration Form</h2>
+
+    <form id="registrationForm">
+
+      <h3 class="section-title">Personal Details</h3>
+
+      <div class="field">
+        <label for="fullName">Full Name</label>
+        <input type="text" id="fullName" placeholder="John Doe" required>
+      </div>
+
+      <div class="field">
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" required>
+      </div>
+
+      <div class="field">
+        <label for="gender">Gender</label>
+        <select id="gender" required>
+          <option value="" disabled selected>Select gender</option>
+          <option value="Male">Male</option>
+          <option value="Female">Female</option>
+          <option value="Other">Other</option>
+        </select>
+      </div>
+
+      <div class="field">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" placeholder="example@mail.com" required>
+      </div>
+
+      <div class="field">
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" placeholder="10-digit number" pattern="[0-9]{10}" required>
+      </div>
+
+      <div class="field">
+        <label for="address">Address</label>
+        <textarea id="address" placeholder="Street, City, State, Zip" required></textarea>
+      </div>
+
+      <h3 class="section-title">Academic Details</h3>
+
+      <div class="field">
+        <label for="qualification">Highest Qualification</label>
+        <input type="text" id="qualification" placeholder="e.g. Bachelor's in Computer Science" required>
+      </div>
+
+      <div class="field">
+        <label for="university">University/Institute</label>
+        <input type="text" id="university" placeholder="University or College Name" required>
+      </div>
+
+      <div class="field">
+        <label for="passingYear">Year of Passing</label>
+        <input type="text" id="passingYear" placeholder="e.g. 2023" required>
+      </div>
+
+      <div class="field">
+        <label for="grade">Grade/Percentage</label>
+        <input type="text" id="grade" placeholder="e.g. 85%, A+" required>
+      </div>
+
+      <h3 class="section-title">Medical Details</h3>
+
+      <div class="field">
+        <label for="medical">Medical Conditions (If any)</label>
+        <textarea id="medical" placeholder="Please mention any medical conditions or type 'None'" required></textarea>
+      </div>
+
+      <div class="field">
+        <label for="emergencyName">Emergency Contact Name</label>
+        <input type="text" id="emergencyName" placeholder="Contact Name" required>
+      </div>
+
+      <div class="field">
+        <label for="emergencyPhone">Emergency Contact Phone</label>
+        <input type="tel" id="emergencyPhone" placeholder="10-digit number" pattern="[0-9]{10}" required>
+      </div>
+
+      <p id="regMessage" class="message"></p>
+
+      <div class="btn-row">
+        <button type="submit" class="primary-btn">Register</button>
+      </div>
+
+    </form>
+  </section>
+
+  <!-- ===================== ADMIN LOGIN ===================== -->
+  <section id="adminView" class="view hidden">
+    <h2 class="view-title">Admin Login</h2>
+
+    <form id="adminLoginForm">
+      <div class="field">
+        <label for="adminUsername">Username</label>
+        <input type="text" id="adminUsername" placeholder="Admin username" required>
+      </div>
+
+      <div class="field">
+        <label for="adminPassword">Password</label>
+        <input type="password" id="adminPassword" placeholder="Password" required>
+      </div>
+
+      <div class="btn-row">
+        <button type="submit" class="primary-btn">Login</button>
+      </div>
+
+      <p id="loginError" class="message error"></p>
+    </form>
+  </section>
+
+  <!-- ===================== ADMIN DASHBOARD ===================== -->
+  <section id="dashboardView" class="view hidden">
+    <h2 class="view-title">Registered Candidates</h2>
+
+    <div class="btn-row">
+      <button id="logoutBtn" class="danger-btn" onclick="logout()">Logout</button>
+    </div>
+
+    <div class="table-wrapper">
+      <table id="candidatesTable">
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Address</th>
+            <th>Qualification</th>
+            <th>University</th>
+            <th>Passing Year</th>
+            <th>Grade</th>
+            <th>Medical Conditions</th>
+            <th>Emergency Contact</th>
+          </tr>
+        </thead>
+        <tbody id="candidatesTableBody">
+          <!-- rows injected by script.js -->
+        </tbody>
+      </table>
+    </div>
+
+    <p id="noCandidatesMsg" class="message hidden">No registered candidates yet.</p>
+
+  </section>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
