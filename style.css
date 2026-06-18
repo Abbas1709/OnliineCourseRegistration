@@ -1,0 +1,250 @@
+/* ============ Reset & base ============ */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background: linear-gradient(135deg, #6300c4 0%, #2a74f3 100%);
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 60px 20px;
+}
+
+/* ============ Card ============ */
+.card {
+  background: #ffffff;
+  width: 100%;
+  max-width: 760px;
+  border-radius: 18px;
+  padding: 40px 50px 50px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+.app-title {
+  text-align: center;
+  font-size: 30px;
+  font-weight: 800;
+  color: #161616;
+  margin: 0 0 18px;
+}
+
+/* ============ Tab buttons ============ */
+.tab-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 30px;
+}
+
+.tab-btn {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 22px;
+  border-radius: 22px;
+  cursor: pointer;
+  border: 2px solid #2a74f3;
+  background: #ffffff;
+  color: #2a74f3;
+  transition: background 0.15s ease, color 0.15s ease, transform 0.1s ease;
+}
+
+.tab-btn:hover {
+  transform: translateY(-1px);
+}
+
+.tab-btn.active {
+  background: #2a74f3;
+  color: #ffffff;
+}
+
+/* ============ Views ============ */
+.view-title {
+  text-align: center;
+  font-size: 21px;
+  font-weight: 800;
+  color: #161616;
+  margin: 0 0 24px;
+}
+
+.hidden {
+  display: none !important;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 800;
+  color: #161616;
+  margin: 26px 0 14px;
+}
+
+.section-title:first-of-type {
+  margin-top: 0;
+}
+
+/* ============ Fields ============ */
+.field {
+  margin-bottom: 18px;
+}
+
+.field label {
+  display: block;
+  font-size: 14px;
+  font-weight: 700;
+  color: #2b2b2b;
+  margin-bottom: 6px;
+}
+
+.field input,
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 11px 14px;
+  font-size: 14px;
+  font-family: inherit;
+  color: #1a1a1a;
+  border: 1px solid #cfd3da;
+  border-radius: 9px;
+  background: #ffffff;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #9aa0aa;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  border-color: #2a74f3;
+  box-shadow: 0 0 0 3px rgba(42, 116, 243, 0.15);
+}
+
+.field textarea {
+  min-height: 70px;
+  resize: vertical;
+}
+
+.field select {
+  appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='14' height='9' viewBox='0 0 14 9'><path d='M1 1l6 6 6-6' stroke='%23555' stroke-width='2' fill='none' fill-rule='evenodd'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+
+/* ============ Buttons ============ */
+.btn-row {
+  display: flex;
+  justify-content: center;
+  margin: 28px 0 6px;
+}
+
+.primary-btn,
+.danger-btn {
+  font-family: inherit;
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  border: none;
+  border-radius: 24px;
+  padding: 13px 42px;
+  cursor: pointer;
+  transition: filter 0.15s ease, transform 0.1s ease;
+}
+
+.primary-btn {
+  background: #2a74f3;
+}
+
+.primary-btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+.danger-btn {
+  background: #c31c2e;
+}
+
+.danger-btn:hover {
+  filter: brightness(1.08);
+  transform: translateY(-1px);
+}
+
+/* ============ Messages ============ */
+.message {
+  text-align: center;
+  font-size: 14px;
+  font-weight: 600;
+  min-height: 20px;
+  margin: 4px 0 0;
+}
+
+.message.error {
+  color: #c31c2e;
+}
+
+.message.success {
+  color: #1d8a3e;
+}
+
+/* ============ Table (Admin Dashboard) ============ */
+.table-wrapper {
+  overflow-x: auto;
+  border: 1px solid #e3e6ea;
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  min-width: 1100px;
+}
+
+thead th {
+  background: #2a74f3;
+  color: #ffffff;
+  font-weight: 700;
+  text-align: left;
+  padding: 12px 14px;
+  white-space: nowrap;
+}
+
+tbody td {
+  padding: 12px 14px;
+  border-bottom: 1px solid #edf0f3;
+  border-right: 1px solid #edf0f3;
+  vertical-align: top;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+tbody tr:hover {
+  background: #f7faff;
+}
+
+/* ============ Responsive ============ */
+@media (max-width: 600px) {
+  .card {
+    padding: 28px 22px 36px;
+    border-radius: 14px;
+  }
+
+  .app-title {
+    font-size: 24px;
+  }
+
+  .tab-btn {
+    font-size: 13px;
+    padding: 9px 14px;
+  }
+}
